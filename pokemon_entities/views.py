@@ -100,6 +100,14 @@ def show_pokemon(request, pokemon_id):
         'description': pokemon.description,
     }
 
+    if pokemon.evolved_from:
+        previous_evolution = pokemon.evolved_from
+        pokemon_data["previous_evolution"] = {
+            "pokemon_id": previous_evolution.id,
+            "img_url": request.build_absolute_uri(previous_evolution.image.url) if previous_evolution.image else None,
+            "title_ru": previous_evolution.title
+        }
+
     return render(request, 'pokemon.html', context={
         'map': folium_map._repr_html_(), 'pokemon': pokemon_data
     })
