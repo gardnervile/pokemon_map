@@ -23,4 +23,4 @@ class PokemonEntity(models.Model):
     health = models.IntegerField(null=True, blank=True, verbose_name='Здоровье')
     strength = models.IntegerField(null=True, blank=True, verbose_name='Сила')
     defence = models.IntegerField(null=True, blank=True, verbose_name='Защита')
-    stamina = models.IntegerField(null=True, blank=True, verbose_name='Стамина')
+    stamina = models.IntegerField(null=True, blank=True, verbose_name='Выносливость')
