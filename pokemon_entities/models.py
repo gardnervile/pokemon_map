@@ -7,7 +7,7 @@ class Pokemon(models.Model):
     title_en = models.CharField(max_length=255, blank=True, verbose_name='Имя покемона на английском')
     title_jp = models.CharField(max_length=255, blank=True, verbose_name='Имя покемона на японском')
     evolved_from = models.ForeignKey('self', on_delete=models.SET_NULL, null=True, blank=True, related_name='evolutions', verbose_name='Эволюционирует из')
-    evolves_to = models.ForeignKey('self', null=True, blank=True, on_delete=models.SET_NULL, related_name='evolves_from', verbose_name='Эволюционирует в')
+   
 
     def __str__(self):
         return self.title
